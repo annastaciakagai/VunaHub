@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Tom Trader",
+    "phone": "0798765432",
+    "password": "$2b$10$6BdvvOGTyYHHjW2rZbASyOyuY8C945nGmYVGbMzkc..T7aquSkKFW",
+    "role": "trader",
+    "locationName": "Nyahururu"
+  },
+  
+  {
+    "name": "Alice Trader",
+    "phone": "0788123456",
+    "password": "$2b$10$YUuktQL2.jT9TGoMJ7QKa.704XWdGe9UZh3abvZjKPc99zmN.7Fsi", 
+    "role": "trader",
+    "locationName": "Kenol"
+  }
+]
