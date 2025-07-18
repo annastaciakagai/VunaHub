@@ -4,14 +4,14 @@ const { v4: uuidv4 } = require('uuid');
 
 const UserSchema = new mongoose.Schema({
     name:{type:String, required:true},
-    FarmerID:{type:String, required:true, unique:true},
-    password:{type:String, required:true},
-    phone:{type:String, required: true},
+    farmerId:{type:String, sparse: true, unique:true},
+    password:{type:String, required:true, select:false},
+    phone:{type:String, required: true, unique: true},
 
     role: {
         type:String,
         enum: ['farmer', 'trader', 'admin', 'driver'],
-        default: 'farmer'
+        default: 'farmer',
     },
 
     //auto-generated for drivers and traders
@@ -31,7 +31,7 @@ const UserSchema = new mongoose.Schema({
 
     //Geo-location
     location: {
-        type: {type: String, enum: ['Point'], defaulr: 'Point'},
+        type: {type: String, enum: ['Point'], default: 'Point'},
         coordinates:{
             type: [Number],
             default: undefined
@@ -49,10 +49,12 @@ const UserSchema = new mongoose.Schema({
 
 //coordinates in [longitude, latitude]
 UserSchema.index({ location: '2dsphere'});
+UserSchema.index({role:1});
+
 
 //Auto-generated code for traders and drivers
 UserSchema.pre('save', function (next) {
-    if((this.role === 'trader' || this.role === 'driver')) {
+    if((this.role === 'admin' || this.role === 'driver')) {
         if(!this.systemId) {
             this.systemId = `VH-${this.role.slice(0, 2).toUpperCase()}-${uuidv4().split('-')[0].toUpperCase()}`;
         }

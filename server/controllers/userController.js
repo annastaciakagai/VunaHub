@@ -2,6 +2,7 @@ const User = require('../models/User.js');
 const Produce = require('../models/Produce.js');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const { v4: uuidv4 } = require('uuid');
 
 const userController = {
   // 1. GET /farmers
@@ -44,18 +45,23 @@ const userController = {
         password: hash,
         role: 'farmer',
         locationName,
-        produceTypes
+        produceTypes,
+        farmerId: `VH-FA-${uuidv4().split('-')[0].toUpperCase()}`
       });
       // optionally issue JWT
       const token = jwt.sign(
         { id: farmer._id, role: farmer.role },
         process.env.JWT_SECRET,
-        { expiresIn: '1d' }
+        { expiresIn: '7d' }
       );
       res.status(201).json({ farmer, token });
-    } catch (err) {
+    }catch (err) {
+      if (err.code === 11000) {
+        return res.status(409).json({ message: 'Phone number already in use' });
+      }
       res.status(400).json({ error: err.message });
     }
+
   },
 
   // ————————————————————————————————
@@ -107,6 +113,9 @@ const userController = {
       );
       res.status(201).json({ trader, token });
     } catch (err) {
+      if (err.code === 11000) {
+        return res.status(409).json({ message: 'Phone number already in use' });
+      }
       res.status(400).json({ error: err.message });
     }
   }

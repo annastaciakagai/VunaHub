@@ -19,7 +19,7 @@ const produceSchema = new mongoose.Schema({
 
   intent: { 
     type:String, 
-    enum:['sell','buy'], 
+    enum:['supply','demand'], 
     required:true },
 
   quality: { 
@@ -58,5 +58,10 @@ const produceSchema = new mongoose.Schema({
 }, { timestamps:true });
 
 produceSchema.index({ location:'2dsphere' });
+
+// Speed up common filters
+produceSchema.index({ intent: 1 });
+produceSchema.index({ type: 1 });
+produceSchema.index({ status: 1 });
 
 module.exports = mongoose.model('Produce', produceSchema);

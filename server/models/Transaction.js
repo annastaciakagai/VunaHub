@@ -1,10 +1,41 @@
 const mongoose = require('mongoose');
-const txnSchema = new mongoose.Schema({
-  produce: { type: mongoose.Schema.Types.ObjectId, ref:'Produce', required:true },
-  trader: { type: mongoose.Schema.Types.ObjectId, ref:'User', required:true },
-  amount: { type:Number, required:true },
-  method: { type:String, enum:['MPESA','Cash','Other'], default:'Other' },
-  reference: String,
-  timestamp: { type:Date, default:Date.now }
-}, { timestamps:true });
-module.exports = mongoose.model('Transaction', txnSchema);
+
+const transactionSchema = new mongoose.Schema({
+  produce: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Produce',
+    required: true
+  },
+  driver: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  //farmer
+  seller: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  //Trader
+  buyer: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  paymentMethod: {
+    type: String,
+    enum: ['M-PESA', 'BANK'],
+    required: true
+  },
+  paymentCode: {
+    type: String,
+    required: true
+  },
+  amount: {
+    type: Number,
+    required: true
+  }
+}, { timestamps: true });
+
+module.exports = mongoose.model('Transaction', transactionSchema);
