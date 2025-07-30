@@ -17,8 +17,8 @@ flowchart TD
   subgraph "Backend (Node.js/Express)"
     D[API Endpoints]
     E[Controllers]
-    F[Models (MongoDB)]
-    G[Auth (JWT)]
+    F[Models "(MongoDB)"]
+    G[Auth "(JWT)"]
   end
 
 ```
