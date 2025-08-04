@@ -64,7 +64,7 @@ const Hero = () => {
             className="hidden lg:block"
           >
             <img 
-              src="../../public/VunaHub logo.png" 
+              src="/VunaHub-logo.png" 
               alt="VunaHub - Agricultural Collection and Distribution" 
               className="w-full h-auto rounded-2xl shadow-xl"
             />

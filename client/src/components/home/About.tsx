@@ -28,7 +28,7 @@ const About = () => {
             className="order-2 lg:order-1"
           >
             <img 
-              src="../../public/VunaHub about.png" 
+              src="/VunaHub-about.png" 
               alt="Kenyan farmers with crops" 
               className="w-full h-auto rounded-2xl shadow-lg"
             />
