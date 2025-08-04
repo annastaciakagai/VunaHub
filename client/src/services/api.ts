@@ -35,23 +35,23 @@ api.interceptors.response.use(
   }
 );
 // Example: Register user
-export async function registerUser(data: any) {
-  const response = await fetch(`${API_BASE_URL}/api/users/register`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-  return response.json();
-}
+// export async function registerUser(data: any) {
+//   const response = await fetch(`${API_BASE_URL}/api/users/register`, {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify(data),
+//   });
+//   return response.json();
+// }
 
-// Example: Login user
-export async function loginUser(data: any) {
-  const response = await fetch(`${API_BASE_URL}/api/users/login`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  });
-  return response.json();
-}
+// // Example: Login user
+// export async function loginUser(data: any) {
+//   const response = await fetch(`${API_BASE_URL}/api/users/login`, {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify(data),
+//   });
+//   return response.json();
+// }
 
 export default api;
