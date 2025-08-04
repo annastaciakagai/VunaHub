@@ -1,4 +1,5 @@
 # VunaHub - Transforming Africa's Produce Pipeline
+https://vuna-hub.vercel.app/
 
 VunaHub is a platform designed to streamline the collection, trading, and logistics of agricultural produce in Africa. It connects farmers, traders, drivers, and administrators to create an efficient, transparent, and scalable produce supply chain.
 
@@ -75,7 +76,7 @@ pnpm dev         # or npm start
 - Backend: [http://localhost:5000](http://localhost:5000)
 
 ---
-
+https://vuna-hub.vercel.app/
 
 
 
