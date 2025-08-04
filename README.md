@@ -8,30 +8,19 @@ VunaHub is a platform designed to streamline the collection, trading, and logist
 
 ```mermaid
 flowchart TD
-    subgraph Frontend (React)
-        A[User: Farmer/Trader/Driver/Admin]
-        B[Login/Register]
-        C[Dashboards & Features]
-    end
-    subgraph Backend (Node.js/Express)
-        D[API Endpoints]
-        E[Controllers]
-        F[Models (MongoDB)]
-        G[Auth (JWT)]
-    end
-    subgraph Database
-        H[(MongoDB)]
-    end
+  subgraph "Frontend (React)"
+    A[User: Farmer/Trader/Driver/Admin]
+    B[Login/Register]
+    C[Dashboards & Features]
+  end
 
-    A --> B
-    B --> D
-    C --> D
-    D --> E
-    E --> F
-    F --> H
-    E --> G
-    G --> F
-    D <--> G
+  subgraph "Backend (Node.js/Express)"
+    D[API Endpoints]
+    E[Controllers]
+    F["Models (MongoDB)"]
+    G["Auth (JWT)"]
+  end
+
 ```
 
 ---
