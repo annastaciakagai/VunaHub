@@ -6,21 +6,21 @@ const testimonials = [
     id: 1,
     name: "Janet Wanjiku",
     role: "Farmer, Lari",
-    image: "../../public/VunaHub users-1.png",
+    image: "/VunaHub-users-1.png",
     content: "Since joining VunaHub, I've been able to focus more on farming and less on finding buyers. The platform connects me directly to traders and manages all the logistics. My income has increased by 30% in just six months!"
   },
   {
     id: 2,
     name: "George Omondi",
     role: "Transporter, Kiambu",
-    image: "../../public/VunaHub users-2.png",
+    image: "/VunaHub-users-2.png",
     content: "The VunaHub system makes my job as a driver much easier. I get clear collection routes, notifications about pickups, and confirmation from farmers. It's reduced my fuel costs and increased the number of collections I can make each day."
   },
   {
     id: 3,
     name: "Joe Njenga",
     role: "Trader, Nairobi",
-    image: "../../public/VunaHub users-3.png",
+    image: "/VunaHub-users-3.png",
     content: "I run a produce shop in Nairobi, and VunaHub has transformed my business. I can browse available produce directly from farmers, place orders, and have everything delivered on schedule. The quality is consistent, and my customers are very happy."
   }
 ];
